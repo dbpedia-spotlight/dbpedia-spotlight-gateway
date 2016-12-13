@@ -1,0 +1,61 @@
+group 'org.dbpedia.spotlight'
+version '1.0.0'
+
+buildscript {
+    ext {
+        springBootVersion = '1.4.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'checkstyle'
+
+checkstyle {
+    configFile = new File("etc/config/checkstyle", "checkstyle.xml")
+}
+
+configurations {
+    provided
+    compile.exclude module: 'spring-boot-starter-tomcat'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.cloud:spring-cloud-starter-config')
+    compile('org.springframework.cloud:spring-cloud-starter-eureka')
+    compile('org.springframework.cloud:spring-cloud-starter-zuul')
+    compile('org.springframework.cloud:spring-cloud-starter-bus-amqp')
+    compile("org.springframework.boot:spring-boot-starter-jetty")
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.cloud:spring-cloud-starter-config')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.cloud:spring-cloud-starter-ribbon')
+    compile('org.springframework.cloud:spring-cloud-starter-feign')
+    compile('org.springframework.data:spring-data-commons-core:1.1.0.RELEASE')
+    compile("org.springframework.boot:spring-boot-starter-security")
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.SR1"
+    }
+}
+
+jar {
+    baseName = 'dbpedia-spotlight-gateway'
+    version = '1.0.0'
+}
