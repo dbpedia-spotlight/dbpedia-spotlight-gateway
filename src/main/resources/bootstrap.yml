@@ -1,8 +1,3 @@
-# Allow Eureka to recognize two apps of the same type on the same host as separate instances
-eureka:
-  instance:
-    instanceId: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.value}}
-
 ---
 spring:
   profiles: local
@@ -16,6 +11,9 @@ spring:
     password: guest
     addresses: localhost
     port: 5672
+security:
+    basic:
+        enabled: false
 
 
 ---
