@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/sandroacoelho/dbpedia-spotlight-gateway.svg?branch=master)](https://travis-ci.org/sandroacoelho/dbpedia-spotlight-gateway)
-
+[![Build Status](https://travis-ci.org/dbpedia-spotlight/dbpedia-spotlight-gateway.svg?branch=master)](https://travis-ci.org/dbpedia-spotlight/dbpedia-spotlight-gateway)
 
 ## Attention:
 
