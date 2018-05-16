@@ -13,15 +13,6 @@ All the best,
 
 
 
-## What is DBpedia Spotlight?
-
-DBpedia Spotlight is a tool for automatically annotating mentions of DBpedia resources in text, providing a solution for linking unstructured information sources to the Linked Open Data cloud through DBpedia.
-
-## What is DBpedia Spotlight Services?
-
-TODO: Describe
-
-
 ## Issues
 
-If you have any problems with or questions about this library, please contact us through a [GitHub issue](https://github.com/sandroacoelho/dbpedia-spotlight-gateway/issues).
+If you have any problems with or questions about this library, please contact us through a [GitHub issue](https://github.com/tanker-nerd/tanker-gateway/issues).
